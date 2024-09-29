@@ -12,7 +12,7 @@
 # next.js
 /.next/
 # commented out by stot:
-/out/
+# /out/
 
 # production
 /build
