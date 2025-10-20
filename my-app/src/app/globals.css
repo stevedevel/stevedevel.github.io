@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --background: #ffffff;
+  --background: #212529;
   --foreground: #171717;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #212529;
     --foreground: #ededed;
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+*/
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.marginTB {
+  margin: 10px 0 10px 0
+}
+.marginLR {
+  margin: 0 10px 0 10px
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.item {
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px dashed var(--background);
+
+
+  
+}
+
+
+.item:hover {
+  
+  --b: 1px;   /* thickness of the border */
+  --c: lightblue;   /* color of the border */
+  --w: 10px;  /* width of border */
+  
+
+  border: var(--b) solid #0000; /* space for the border */
+  --_g: #212529 90deg,var(--c) 0;
+  --_p: var(--w) var(--w) border-box no-repeat;
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+}
+
+.item.selected {
+  background-color: lightblue;
+  border: 1px inset lightblue;
+  color: black;
+}
+
+.item img {
+  display: inline;
+}
+
+#text {
+  height: 38vh;
+  overflow-y: auto;
+}
+
+#text img {
+  
+  height: 38vh;
+  max-width: 100%;
+  object-fit: cover;
+  float: left;
+  margin-right: 1em;
 }

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export'
+    // (stot) output: 'export'
+    
 };
 
 export default nextConfig;
